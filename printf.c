@@ -7,7 +7,7 @@
 */
 int _printf(const char *format, ...)
 {
-	int i = 0, j = 0;
+	int i = 0, j = 0, k = 0;
 	char *str;
 	va_list list;
 
@@ -21,6 +21,7 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
 					_putchar(va_arg(list, int));
+					k++;
 					break;
 				case 's':
 					j = 0;
@@ -28,10 +29,12 @@ int _printf(const char *format, ...)
 					for (; str[j] != '\0'; j++)
 					{
 						_putchar(str[j]);
+						k++;
 					}
 					break;
 				case '%':
-					_putchar(va_arg(list, int));
+					_putchar('%');
+					k++;
 					break;
 			}
 			i++;
@@ -39,7 +42,8 @@ int _printf(const char *format, ...)
 		else
 		{
 			_putchar(format[i]);
+			k++;
 		}
 	}
-	return (0);
+	return (k);
 }
