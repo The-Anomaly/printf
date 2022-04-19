@@ -3,11 +3,11 @@
 /**
 * print_number - print integers
 * @n: input integer
-*
+* Return: Length of number
 */
-void print_number(int n)
+int print_number(int n)
 {
-	unsigned int m, o, count = 1;
+	unsigned int num = n, len = 0, m, o, count = 1;
 
 	if (n < 0)
 	{
@@ -31,4 +31,15 @@ void print_number(int n)
 	{
 		_putchar(((o / count) % 10) + '0');
 	}
+	if (num <= 0)
+	{
+		len++;
+		num = num * -1;
+	}
+	while (num > 0)
+	{
+		num /= 10;
+		len++;
+	}
+	return (len);
 }

@@ -36,6 +36,12 @@ int _printf(const char *format, ...)
 					_putchar('%');
 					k++;
 					break;
+				case 'd':
+					k = k + print_number(va_arg(list, int));
+			  		break;
+				case 'i':
+					k = k + print_number(va_arg(list, int));
+					break;
 			}
 			i++;
 		}
