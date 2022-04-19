@@ -62,5 +62,6 @@ int _printf(const char *format, ...)
 			k++;
 		}
 	}
+	va_end(list);
 	return (k);
 }
