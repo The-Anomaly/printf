@@ -8,7 +8,11 @@
 int print_number(va_list l)
 {
 	int n = va_arg(l, int);
-	int num = n, len = 0, m, o, count = 1;
+	int num, len = 0, m, o, count = 1;
+
+	if (!n)
+		return (0);
+	num = n;
 
 	if (n < 0)
 	{

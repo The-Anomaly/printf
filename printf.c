@@ -11,13 +11,22 @@ int _printf(const char *format, ...)
 	va_list list;
 
 	va_start(list, format);
+
+	if (format == NULL)
+		return (-1);
+
 	for (; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
 		{
 			int (*f)(va_list l) = get_func(format[i + 1]);
+
 			if (f != NULL)
-				k += f(list);
+			{
+				int n = f(list);
+				if (n != 0)
+					k += n;
+			}
 			i++;
 		}
 		else

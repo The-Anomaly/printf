@@ -11,6 +11,9 @@ int print_string(va_list l)
 	int j = 0;
 	char *str = va_arg(l, char *);
 
+	if (!str)
+		return (0);
+
 	for (; str[j] != '\0'; j++)
 	{
 		_putchar(str[j]);
@@ -25,7 +28,11 @@ int print_string(va_list l)
 */
 int print_char(va_list l)
 {
-	_putchar(va_arg(l, int));
+	char c = va_arg(l, int);
+
+	if (!c)
+		return (0);
+	_putchar(c);
 	return (1);
 }
 
