@@ -11,6 +11,11 @@ DESCRIPTION
 	The function _printf() produces output according to the format below.
 	The function writes output to stdout, the standard output stream.
 
+   Return value
+
+	Upon successful return, these functions return the number of characters
+	printed (excluding the null byte used to end output to strings).
+
    Format of the format string
     
        The format string is a character string, beginning and ending in
