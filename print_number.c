@@ -2,12 +2,17 @@
 
 /**
 * print_number - print integers
-* @n: input integer
+* @l: va list argument
 * Return: Length of number
 */
-int print_number(int n)
+int print_number(va_list l)
 {
-	unsigned int num = n, len = 0, m, o, count = 1;
+	int n = va_arg(l, int);
+	int num, len = 0, m, o, count = 1;
+
+	if (!n)
+		return (0);
+	num = n;
 
 	if (n < 0)
 	{
