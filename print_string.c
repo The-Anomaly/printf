@@ -17,7 +17,7 @@ int print_string(va_list l)
 	{
 		_putchar(str[j]);
 	}
-	return (j - 1);
+	return (j);
 }
 
 /**
