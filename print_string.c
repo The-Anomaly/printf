@@ -1,6 +1,5 @@
 #include "main.h"
 
-
 /**
 * print_string - prints a string
 * @l: va list argument
