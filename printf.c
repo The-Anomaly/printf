@@ -15,7 +15,7 @@ int _printf(const char *format, ...)
 	if (format == NULL)
 		return (-1);
 
-	for (; format[i] != '\0'; i++)
+	for (; format[i]; i++)
 	{
 		if (format[i] == '%')
 		{
@@ -24,15 +24,20 @@ int _printf(const char *format, ...)
 			if (f != NULL)
 			{
 				int n = f(list);
+
 				if (n != 0)
 					k += n;
+			}
+			else
+			{
+				k += _putchar(format[i]);
+				k += _putchar(format[i + 1]);
 			}
 			i++;
 		}
 		else
 		{
-			_putchar(format[i]);
-			k++;
+			k += _putchar(format[i]);
 		}
 	}
 	va_end(list);
