@@ -1,4 +1,49 @@
 #include "main.h"
+#include <stdio.h>
+
+/**
+* count_number - find the number of digits in a number
+* @num: input integer
+* Return: number of digits
+*/
+int count_number(int n)
+{
+	unsigned int len = 0, num = n;
+
+	if (n <= 0)
+	{
+		len++;
+		num = n * -1;
+	}
+	while (num > 0)
+	{
+		num /= 10;
+		len++;
+	}
+	return (len);
+}
+
+/**
+* print_num - helper function that loops through
+* an integer and prints all its digits
+* @n: integer to be printed
+*/
+void print_num(int n)
+{
+	unsigned int n1;
+
+	if (n < 0)
+	{
+		_putchar('-');
+		n1 = -n;
+	}
+	else
+		n1 = n;
+
+	if (n1 / 10)
+		print_num(n1 / 10);
+	_putchar((n1 % 10) + '0');
+}
 
 /**
 * print_number - print integers
@@ -8,43 +53,7 @@
 int print_number(va_list l)
 {
 	int n = va_arg(l, int);
-	int num, len = 0, m, o, count = 1;
 
-	if (!n)
-		return (0);
-	num = n;
-
-	if (n < 0)
-	{
-		_putchar(45);
-		m = n * -1;
-	}
-	else
-	{
-		m = n;
-	}
-
-	o = m;
-
-	while (m > 9)
-	{
-		m /= 10;
-		count *= 10;
-	}
-
-	for (; count >= 1; count /= 10)
-	{
-		_putchar(((o / count) % 10) + '0');
-	}
-	if (num <= 0)
-	{
-		len++;
-		num = num * -1;
-	}
-	while (num > 0)
-	{
-		num /= 10;
-		len++;
-	}
-	return (len);
+	print_num(n);
+	return (count_number(n));
 }
