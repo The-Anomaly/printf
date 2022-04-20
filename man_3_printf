@@ -83,9 +83,8 @@ _printf("String: %s, Character: %c, 20%%\n", "Test", 'x');
 Expected output: String: Test, Character: x, 20%
 
 
-To print numbers:
+	To print numbers:
 _printf("Grade: %d out of %i", 69, 100);
-
 Expected output: Grade 69 out of 100
 
 
