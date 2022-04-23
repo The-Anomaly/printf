@@ -14,6 +14,8 @@ int print_percent(va_list l);
 /* Number bases */
 int convert(unsigned long int n, unsigned int b);
 int print_bin(va_list l);
+int print_oct(va_list l);
+int print_unsigned(va_list l);
 
 typedef struct op
 {
