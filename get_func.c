@@ -7,7 +7,7 @@
 */
 int (*get_func(char c))(va_list l)
 {
-	op_t sp_func[8] = {
+	op_t sp_func[9] = {
 	{'c', print_char},
 	{'s', print_string},
 	{'%', print_percent},
@@ -16,10 +16,11 @@ int (*get_func(char c))(va_list l)
 	{'b', print_bin},
 	{'u', print_unsigned},
 	{'o', print_oct},
+	{'r', print_rev_string},
 	};
 	int i = 0;
 
-	for (; i < 8; i++)
+	for (; i < 9; i++)
 	{
 		if (c == sp_func[i].sp)
 			return (sp_func[i].f);
