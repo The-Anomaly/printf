@@ -3,7 +3,7 @@
 
 /**
 * count_number - find the number of digits in a number
-* @num: input integer
+* @n: input integer
 * Return: number of digits
 */
 int count_number(int n)
