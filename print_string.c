@@ -13,13 +13,12 @@ int print_rev_string(va_list l)
 	if (!str)
 		return (0);
 
-	while (str[j] != '\0')
+	while (str[i] != '\0')
 	{
-		j++;
 		i++;
 	}
 
-	for (; j >= 0; j--)
+	for (j = i - 1; j >= 0; j--)
 	{
 		_putchar(str[j]);
 	}

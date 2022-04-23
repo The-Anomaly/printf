@@ -11,6 +11,7 @@ int print_string(va_list l);
 int print_char(va_list l);
 int print_percent(va_list l);
 int print_rev_string(va_list l);
+int print_rot13(va_list l);
 
 /* Number bases */
 int convert(unsigned long int n, unsigned int b);
