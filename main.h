@@ -11,6 +11,10 @@ int print_string(va_list l);
 int print_char(va_list l);
 int print_percent(va_list l);
 
+/* Number bases */
+int convert(unsigned long int n, unsigned int b);
+int print_bin(va_list l);
+
 typedef struct op
 {
 	char sp;
