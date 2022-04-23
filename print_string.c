@@ -7,20 +7,23 @@
 */
 int print_rev_string(va_list l)
 {
-	int j = 0;
+	int j = 0, i = 0;
 	char *str = va_arg(l, char *);
 
 	if (!str)
 		return (0);
 
 	while (str[j] != '\0')
+	{
 		j++;
+		i++;
+	}
 
 	for (; j >= 0; j--)
 	{
 		_putchar(str[j]);
 	}
-	return (j);
+	return (i);
 }
 
 /**
